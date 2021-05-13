@@ -9,13 +9,13 @@ window.addEventListener("keyup", (e) => {
 	}
 });
 
-generatePipe = () => {
+generatePipes = () => {
 	if (frames % PIPE_GENERATION_GAP === 0) {
 		let topPipeHeight = generateRandomIntegerBetween(
-			120,
-			canvas.height / 2 + 60
+			100,
+			canvas.height / 2 + 20
 		);
-		pipes.push(new Pipe(120, topPipeHeight));
+		pipes.push(new Pipe(100, topPipeHeight));
 	}
 };
 
@@ -31,11 +31,15 @@ detectedCollisionBetween = (bird, pipe) => {
 		(bird.x < pipe.x + pipe.width &&
 			bird.x + bird.width > pipe.x &&
 			bird.y < pipe.bottomPipeY + pipe.bottomPipeHeight &&
-			bird.y + bird.height > pipe.bottomPipeY) ||
-		//or collsion with ground
-		bird.y + bird.height >= canvas.height
+			bird.y + bird.height > pipe.bottomPipeY)
 	) {
 		return true;
 	}
-	return false;
+};
+
+//not included in detectedCollsion to add delay to pipe generation
+const collisionWithGround = () => {
+	if (bird.y + bird.height >= canvas.height - base.height) {
+		return true;
+	}
 };

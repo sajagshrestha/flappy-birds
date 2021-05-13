@@ -17,15 +17,10 @@ class Bird {
 		this.vy += this.gravity;
 		this.y += this.vy;
 
-		//prevent player geing out of canvas
-		if (this.y >= canvas.height - this.height) {
-			this.y = canvas.height - this.height;
-			this.vy = 0;
-		}
+		//prevent bird from flying out of canvas
 		if (this.y <= 0) {
 			this.y = 0;
 		}
-
 		this.draw();
 	}
 
