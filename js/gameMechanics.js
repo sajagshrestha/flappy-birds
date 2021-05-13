@@ -12,7 +12,7 @@ window.addEventListener("keyup", (e) => {
 generatePipes = () => {
 	if (frames % PIPE_GENERATION_GAP === 0) {
 		let topPipeHeight = generateRandomIntegerBetween(
-			100,
+			90,
 			canvas.height / 2 + 20
 		);
 		pipes.push(new Pipe(100, topPipeHeight));
@@ -41,5 +41,18 @@ detectedCollisionBetween = (bird, pipe) => {
 const collisionWithGround = () => {
 	if (bird.y + bird.height >= canvas.height - base.height) {
 		return true;
+	}
+};
+
+const updateScore = (score) => {
+	bothScores.forEach((s) => {
+		s.innerHTML = score;
+	});
+	if (score >= highScore) {
+		highScore = score;
+		localStorage.setItem("highScore", highScore);
+	}
+	if (score % 5 === 0) {
+		carSpeed += 5;
 	}
 };

@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: "VT323", monospace;
 }
 
 body {
@@ -10,10 +12,80 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	position: relative;
 }
 
-#canvas {
-	border: 2px solid white;
-	background-color: #fbfbfb;
-	box-shadow: 0px 0px 20px #3be6c6, 0px 0px 20px #3be6c6 inset;
+canvas {
+	background-image: url(../assets/bg.png);
+	background-size: contain;
+}
+
+.score-container {
+	position: absolute;
+	top: 5%;
+	left: 2%;
+	font-size: 4rem;
+	color: white;
+}
+
+.high-score-container {
+	position: absolute;
+	top: 20%;
+	left: 2%;
+	font-size: 4rem;
+	color: white;
+}
+
+.game-overlay {
+	position: absolute;
+	z-index: 99;
+	width: 500px;
+	display: flex;
+	border-radius: 5px;
+	flex-direction: column;
+	gap: 1rem;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	padding: 2rem 2rem;
+}
+.game-overlay h1,
+.score {
+	font-size: 5rem;
+}
+.game-overlay h1 {
+	text-shadow: 0px 0px 20px rgba(1, 1, 1, 0.3);
+}
+.game-button {
+	color: white;
+	font-size: 3rem;
+
+	outline: none;
+	border: 2px solid #543000;
+	padding: 1rem 5rem;
+	cursor: pointer;
+	transition: all 0.2s;
+	margin-top: 2rem;
+
+	background: #e86101;
+
+	text-shadow: none;
+}
+
+.game-button:hover {
+	color: #1b1b1b;
+	background: white;
+}
+
+.game-score,
+.game-overlay .score {
+	font-size: 3rem;
+}
+
+.instructions {
+	font-size: 2rem;
+	text-align: center;
+}
+.instructions-title {
+	font-size: 4rem;
 }

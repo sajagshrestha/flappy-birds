@@ -9,6 +9,24 @@
 	</head>
 	<body>
 		<canvas id="canvas"> </canvas>
+		<div class="score-container">SCORE: <span class="score">0</span></div>
+		<div class="high-score-container">
+			HIGH SCORE: <span id="high-score"></span>
+		</div>
+		<div id="game-over" class="game-overlay">
+			<h1>GAME OVER</h1>
+			<p class="game-score">YOUR SCORE: <span class="score">0</span></p>
+			<button class="game-button" id="retry">RETRY</button>
+		</div>
+
+		<div id="start-game" class="game-overlay">
+			<h1>START GAME</h1>
+			<p class="instructions-title">INSTRUCTIONS</p>
+			<p class="instructions">
+				PRESS SPACE BAR TO FLY .
+				<button class="game-button" id="start">START GAME</button>
+			</p>
+		</div>
 
 		<script src="./js/Pipe.js"></script>
 		<script src="./js/Base.js"></script>

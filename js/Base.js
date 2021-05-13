@@ -1,3 +1,6 @@
+const baseImg = new Image();
+baseImg.src = "assets/base.png";
+
 class Base {
 	constructor() {
 		this.x1 = 0;
@@ -8,8 +11,6 @@ class Base {
 		this.moveSpeed = HORIZONTAL_SPEED;
 	}
 	draw() {
-		const baseImg = new Image();
-		baseImg.src = "assets/base.png";
 		context.drawImage(baseImg, this.x1, this.y, this.width, this.height);
 		context.drawImage(baseImg, this.x2, this.y, this.width, this.height);
 	}

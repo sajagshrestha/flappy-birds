@@ -1,3 +1,6 @@
+const birdImg = new Image();
+birdImg.src = "assets/bird-sprite.png";
+
 class Bird {
 	constructor(x, y, width, height) {
 		this.x = x;
@@ -6,11 +9,23 @@ class Bird {
 		this.height = height;
 		this.vy = 0;
 		this.gravity = 0.3;
+		this.frameX = 0;
 	}
 
 	draw() {
 		context.filStyle = "blue";
-		context.fillRect(this.x, this.y, this.width, this.height);
+
+		context.drawImage(
+			birdImg,
+			this.frameX * (this.width + 25),
+			0,
+			this.width + 18,
+			this.height + 16,
+			this.x,
+			this.y,
+			this.width,
+			this.height
+		);
 	}
 
 	update() {
@@ -21,6 +36,11 @@ class Bird {
 		if (this.y <= 0) {
 			this.y = 0;
 		}
+		if (this.y + this.height > canvas.height - 50) {
+			this.vy = 0;
+		}
+		if (this.frameX >= 2) this.frameX = 0;
+		else if (frames % 10 === 0) this.frameX++;
 		this.draw();
 	}
 
@@ -33,5 +53,8 @@ class Bird {
 
 	stopFlying() {
 		this.vy = 0;
+	}
+	reset() {
+		this.y = birdStartPosition;
 	}
 }

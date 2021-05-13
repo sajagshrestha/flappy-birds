@@ -1,3 +1,9 @@
+const topImage = new Image();
+topImage.src = "assets/top-pipe.png";
+
+const bottomImage = new Image();
+bottomImage.src = "assets/bottom-pipe.png";
+
 class Pipe {
 	constructor(width, topPipeHeight) {
 		this.width = width;
@@ -10,8 +16,7 @@ class Pipe {
 
 	draw() {
 		//top pipe
-		const topImage = new Image();
-		topImage.src = "assets/top-pipe.png";
+
 		context.drawImage(
 			topImage,
 			this.x,
@@ -22,8 +27,7 @@ class Pipe {
 		context.restore();
 
 		//bottom pipe
-		const bottomImage = new Image();
-		bottomImage.src = "assets/bottom-pipe.png";
+
 		context.drawImage(
 			bottomImage,
 			this.x,
