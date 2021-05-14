@@ -16,7 +16,6 @@ class Pipe {
 
 	draw() {
 		//top pipe
-
 		context.drawImage(
 			topImage,
 			this.x,
@@ -24,10 +23,8 @@ class Pipe {
 			this.width,
 			this.topPipeHeight
 		);
-		context.restore();
 
 		//bottom pipe
-
 		context.drawImage(
 			bottomImage,
 			this.x,

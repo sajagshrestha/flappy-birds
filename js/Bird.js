@@ -39,6 +39,7 @@ class Bird {
 		if (this.y + this.height > canvas.height - 50) {
 			this.vy = 0;
 		}
+		//draw sprite
 		if (this.frameX >= 2) this.frameX = 0;
 		else if (frames % 10 === 0) this.frameX++;
 		this.draw();
@@ -54,6 +55,7 @@ class Bird {
 	stopFlying() {
 		this.vy = 0;
 	}
+
 	reset() {
 		this.y = birdStartPosition;
 	}

@@ -12,7 +12,7 @@ canvas.width = 550;
 canvas.height = 700;
 
 //game constants
-const PIPE_GAP = 150;
+const PIPE_GAP = 135;
 const HORIZONTAL_SPEED = 5;
 const PIPE_GENERATION_GAP = 70; //Frames
 
@@ -46,7 +46,6 @@ const gameLoop = () => {
 	} else {
 		generatePipes();
 	}
-	base.update();
 
 	//update pipe position, remove pipes and detect collison
 	pipes = pipes.filter((pipe) => {
@@ -63,6 +62,7 @@ const gameLoop = () => {
 		}
 		return true;
 	});
+	base.update();
 
 	frames++;
 };

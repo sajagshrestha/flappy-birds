@@ -52,7 +52,4 @@ const updateScore = (score) => {
 		highScore = score;
 		localStorage.setItem("highScore", highScore);
 	}
-	if (score % 5 === 0) {
-		carSpeed += 5;
-	}
 };
